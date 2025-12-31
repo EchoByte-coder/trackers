@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+:root {
+  --bg: #0b1c33;
+  --card: #142a4d;
+  --text: #ffffff;
+  --accent: #ffd369;
+}
+
+.light {
+  --bg: #f2f2f2;
+  --card: #ffffff;
+  --text: #111;
+  --accent: #ffb703;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+  min-height: 100vh;
+  transition: background 0.3s;
+}
+
+.app {
+  width: 100%;
+  max-width: 420px;
+  animation: fadeIn 0.6s ease;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card {
+  background: var(--card);
+  padding: 12px;
+  border-radius: 14px;
+  margin: 10px 0;
+  display: flex;
+  gap: 10px;
+}
+
+input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}
+
+button {
+  background: var(--accent);
+  border: none;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: var(--card);
+  margin-bottom: 8px;
+  padding: 10px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation: slideUp 0.4s ease;
+}
+
+li.done {
+  opacity: 0.6;
+  text-decoration: line-through;
+}
+
+.progress-card {
+  flex-direction: column;
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.progress-bar {
+  background: #00000033;
+  height: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#progressFill {
+  height: 100%;
+  width: 0%;
+  background: var(--accent);
+  transition: width 0.4s ease;
+}
+.progress-bar {
+  position: relative;
+}
+
+
+.extra-btn {
+  width: 100%;
+  margin-top: 10px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.share-btn {
+  width: auto;
+  padding: 8px 14px;
+  font-size: 14px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #000;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  animation: popIn 0.4s ease;
+}
+
+.share-btn:hover {
+  transform: scale(1.08);
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+/* Floating Share Button */
+.share-fab {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: 600;
+
+  border-radius: 999px;
+  background: var(--accent);
+  color: #000;
+
+  border: none;
+  cursor: pointer;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  animation: popIn 0.4s ease;
+  z-index: 999;
+}
+
+.share-fab:hover {
+  transform: scale(1.08);
+}
+
+/* Mobile optimization */
+@media (max-width: 480px) {
+  .share-fab {
+    right: 12px;
+    bottom: 12px;
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.ai-credit {
+  position: fixed;
+  left: 50%;
+  bottom: 10px;
+  transform: translateX(-50%);
+
+  font-size: 12px;
+  font-weight: 500;
+  text-align: center;
+
+  color: rgba(255, 255, 255, 0.7);
+  background: rgba(0, 0, 0, 0.25);
+  padding: 6px 12px;
+  border-radius: 12px;
+
+  backdrop-filter: blur(6px);
+  line-height: 1.4;
+  z-index: 998;
+
+  animation: fadeInUp 0.8s ease;
+}
+
+/* Light mode support */
+.light .ai-credit {
+  color: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.08);
+}
+
+/* Mobile optimization */
+@media (max-width: 480px) {
+  .ai-credit {
+    font-size: 11px;
+    padding: 5px 10px;
+    bottom: 8px;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 10px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}

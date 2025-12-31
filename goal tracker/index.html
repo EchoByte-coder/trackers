@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Yearly Goal Tracker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+  <header>
+    <h1>🎯 Yearly Goal Tracker</h1>
+    <button id="themeToggle">🌙</button>
+  </header>
+
+  <!-- Year -->
+  <div class="card">
+    <input type="number" id="yearInput" placeholder="Goal Completion Year (e.g. 2025)">
+    <button onclick="saveYear()">Save Year</button>
+  </div>
+
+  <!-- Add Goal -->
+  <div class="card">
+    <input type="text" id="goalInput" placeholder="Write your goal">
+    <button onclick="addGoal()">Add</button>
+  </div>
+
+  <!-- Goals -->
+  <ul id="goalList"></ul>
+
+     <p>👇 below things will unlock after 1 year </p>
+
+  <!-- Progress -->
+<div class="card progress-card">
+  <div class="progress-header">
+    <span id="progressText">0%</span>
+    <button onclick="toggleProgressView()">Switch View</button>
+  </div>
+
+  <div class="progress-container">
+    <div class="progress-bar">
+      <div id="progressFill">
+        <span id="progressEmoji"></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+  <!-- Extra -->
+  <button class="extra-btn" onclick="addOtherThing()">
+    I have done other thing ✨
+  </button>
+
+  <p id="status"></p>
+</div>
+
+<p class="ai-credit">
+  🤖✨ This whole website is made by AI (ChatGPT),<br>
+  but built by me using my own prompt 💡
+</p>
+
+<button class="share-fab" onclick="shareGoals()">
+  🔗 Share
+</button>
+
+
+
+
+<script src="script.js"></script>
+</body>
+</html>
